@@ -31,6 +31,17 @@ print("${:.2f}".format(tip_amount))
 print("${:.2f}".format(total_amount))
 print("${:.2f}".format(split))
 
+coin = 0
+print("You have 0 Coins")
+while True:
+    ques_coin = input("Do you want a coin? ")
+    if ques_coin == "yes":
+        coin += 1
+        print("You have %d Coins" % coin)
+    if ques_coin == "no":
+        print("bye")
+        break
+
 height = int(input("Enter the height:"))
 width = int(input("Enter the width:"))
 gap=" "
