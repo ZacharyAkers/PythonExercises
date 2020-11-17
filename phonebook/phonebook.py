@@ -14,14 +14,14 @@ def phonebook():
             name = input("Name of who you are trying to look up ")
             if name in contact:
                 print("The contact is ", name, ':', contact[name])
-            elif data:
-                print("The contact is ", data)
+            elif name in data:
+                print("The contact is ", name, ':', data[name])
             else:
                 print("That contact doesnt exist. Return to main list to enter the contact")
 
         elif entry == 2:
-            phone_number = input('Please put your phone number: ')
             contact_name = input('Please put your name: ')
+            phone_number = input('Please put your phone number: ')
             if phone_number not in contact.items():
                 contact.update({contact_name:phone_number})
                 print("Contact successfully saved")
@@ -35,8 +35,8 @@ def phonebook():
             name = input("Enter the name of the contact you wish to delete ")
             if name in contact:
                 print('The contact is ', name, ":", contact[name])
-            elif data:
-                print("The contact is ", data)
+            elif name in data:
+                print("The contact is ", name, ':', data[name])
             else:
                 print('That name does not exist')
             confirm = input('Are you sure you wish to delete this contact? Yes/No ')
@@ -51,6 +51,9 @@ def phonebook():
         elif entry == 4:
             if bool(contact) != False:
                 for k, v in contact.items():
+                    print(k, '', v)
+            elif bool(data) != False:
+                for k, v in data.items():
                     print(k, '', v)
             else:
                 print('You have a empty phonebok')
